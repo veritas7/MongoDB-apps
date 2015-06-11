@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+
+<! #https://github.com/veritas7/MongoDB-apps >
+
+<html>
+	<head>
+		<title>MongoDB-based Contact List</title>
+		<style type="text/css">
+			body {font-family:sans-serif;color#4f494;}
+			form input [border-radius: 7.5px;}
+			h5 {display: inline;}
+			.label {text-align: right}
+			.contacts {float:left; padding-top: 10px;}
+			.name {width:100%;float:left; padding:3px;}
+			.wrapper { padding-left: 25px; padding-top: 20px}
+		</style>
+	</head>
+	
+	<body>
+		<div class="wrapper">
+			<h1>MongoDB-based Contact List</h1>
+			<div class="contacts_input" >
+			<form method="post" class="form" action="/newcontact" method='post'>
+				Name: <input type="text" name="Name"/>
+				Cell Phone: <input type="text" name="CellPhone"/>
+				<input type="submit" value='Add Contact Info'/>
+			</form>
+			</div>
+			<div class="contacts">
+				<h3>Contact List:</h3>
+				%for Name in listMembers:
+				<div class="name">
+				Name: {{Name['Name']}},
+				CellPhone: {{Name['CellPhone']}}
+				</div>
+				%end
+			</div>
+		</div>
+	</body>
+</html>
